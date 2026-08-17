@@ -1,0 +1,14 @@
+ In auto-tuning mode......
+ factors:             1
+ p_row x p_col            1            1
+ WARNING: current 2D DECOMP set-up might not work
+ ===== r2c/c2r interface =====
+ First iteration with dedicated timer
+      time (sec):    5.7846899999999997E-004   6.3440600000000001E-004
+ 
+ error / mesh point:    1.4254053E-06
+ Avg time (sec):    2.8944453999999955E-004   6.9041678999999935E-004
+    
+ fft_r2c_z completed 
+    
+Submitted batch job 2156006

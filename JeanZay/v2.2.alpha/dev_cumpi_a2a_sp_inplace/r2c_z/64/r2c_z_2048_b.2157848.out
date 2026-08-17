@@ -1,0 +1,11 @@
+ Padded ALLTOALL optimisation on
+ ===== r2c/c2r interface =====
+ First iteration with dedicated timer
+      time (sec):    0.4109548920625000        0.4829868437500000     
+ 
+ error / mesh point:    2.7150882E-06
+ Avg time (sec):    0.2453942048968751        0.3659773999803126     
+    
+ fft_r2c_z completed 
+    
+Submitted batch job 2157851

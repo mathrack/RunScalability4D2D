@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=r2c_z_0512_a     # Arbitrary name of the Slurm job
+#SBATCH --output=%x.%j.out          # Standard output file of the job
+#SBATCH --error=%x.%j.err           # Standard error file of the job
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=2
+#SBATCH --gres=gpu:2
+#SBATCH --cpus-per-task=1
+#SBATCH --constraint=h100
+#SBATCH --qos=qos_gpu_h100-dev
+#SBATCH --account=dhu@h100
+#SBATCH --exclusive
+# /!\ Important:  The following line is misleading but in Slurm vocabulary,
+# "multithread" refers to hyperthreading.
+#SBATCH --hint=nomultithread        # 1 MPI process per physical core (no hyperthreading)
+
+# Loading the modules of your choice
+module load arch/h100 nvidia-compilers/26.3 cuda/12.8.0 openmpi/4.1.8-cuda
+
+UCX_PROTO_ENABLE=n srun ./fft_r2c_z 2 1 512 512 512 100
+
+sbatch 0512b.slurm

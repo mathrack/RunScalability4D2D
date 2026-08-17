@@ -1,0 +1,14 @@
+ In auto-tuning mode......
+ factors:             1
+ p_row x p_col            1            1
+ WARNING: current 2D DECOMP set-up might not work
+ ===== c2c interface =====
+ First iteration with dedicated timer
+      time (sec):    1.5061120000000000E-003   8.8272300000000001E-003
+ 
+ error / mesh point:    4.9484761826924834E-015
+ Avg time (sec):    9.5960768999999281E-004   8.9652688099999839E-003
+ GFLOPS :     3651.308563889943     
+    
+ fft_c2c_x completed 
+    
