@@ -39,4 +39,4 @@ The python script `process.py` available in the present folder can process the d
 
 Tests on a single GPU for grids 128^3, 256^3 and 512^3 show a simple trend : the higher the number of cells, the longer it takes to run the test.
 
-![Complex-to-complex FFT, forward + backward. One GPU. Various grids.](c2c_gpu_1.png)
+![Complex-to-complex FFT, forward + backward. One GPU. Various grids.](./images/c2c_gpu_1.png)
