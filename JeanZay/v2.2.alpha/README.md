@@ -55,3 +55,18 @@ However, this general observation is not always accurate.
 Each application using 2DECOMP&FFT should analyse carefully their workflow and adapt their pencil decomposition accordingly.
 
 ![Real-to-complex FFT, physical in Z, forward + backward. 64 GPUs. Grid 1024^3. Various pencil decomposition.](./images/r2c_z_gpu_64_nx_1024.png)
+
+## Strong scaling
+
+### Small number of GPUs and small grids
+
+The strong scaling for a grid 512^3 with up to 2 nodes (8 GPUs) is not very good.
+The NCCL backend might improve the performance.
+
+![Real-to-complex FFT, physical in Z, forward + backward. Grid 512^3. Various number of GPUs.](./images/best_dp_c2c_nx_512.png)
+
+### Large number of GPUs and large grids
+
+The strong scaling for a larger grid (1024^3) using 2 to 16 nodes is more interesting.
+
+![Real-to-complex FFT, physical in Z, forward + backward. Grid 1024^3. Various number of GPUs.](./images/best_dp_r2c_z_nx_1024.png)
