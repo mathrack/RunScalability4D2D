@@ -230,7 +230,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("c2c_gpu_1.png")
+    if save_fig: fig.savefig("./images/c2c_gpu_1.png")
     if show_fig: fig.show()
 
 # Process r2c_x/1
@@ -265,7 +265,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("r2c_x_gpu_1.png")
+    if save_fig: fig.savefig("./images/r2c_x_gpu_1.png")
     if show_fig: fig.show()
 
 # Process r2c_z/1
@@ -300,7 +300,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("r2c_z_gpu_1.png")
+    if save_fig: fig.savefig("./images/r2c_z_gpu_1.png")
     if show_fig: fig.show()
 
 # Process c2c, mesh 512^3
@@ -336,7 +336,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("c2c_nx_512.png")
+    if save_fig: fig.savefig("./images/c2c_nx_512.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_512, prec="sp", ngpu = True):
@@ -360,7 +360,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_sp_c2c_nx_512.png")
+    if save_fig: fig.savefig("./images/best_sp_c2c_nx_512.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_512, prec="dp", ngpu = True):
@@ -384,7 +384,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_dp_c2c_nx_512.png")
+    if save_fig: fig.savefig("./images/best_dp_c2c_nx_512.png")
     if show_fig: fig.show()
 
 # Process c2c, mesh 1024^3
@@ -420,7 +420,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("c2c_nx_1024.png")
+    if save_fig: fig.savefig("./images/c2c_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_1024, prec="sp", ngpu = True):
@@ -444,7 +444,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_sp_c2c_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_sp_c2c_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_1024, prec="dp", ngpu = True):
@@ -468,7 +468,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_dp_c2c_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_dp_c2c_nx_1024.png")
     if show_fig: fig.show()
 
 # Process r2c_x, mesh 1024^3
@@ -504,7 +504,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("r2c_x_nx_1024.png")
+    if save_fig: fig.savefig("./images/r2c_x_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_r2cX_gpu_x_nx_1024, prec="sp", ngpu = True):
@@ -528,7 +528,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_sp_r2c_x_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_sp_r2c_x_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_r2cX_gpu_x_nx_1024, prec="dp", ngpu = True):
@@ -552,7 +552,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_dp_r2c_x_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_dp_r2c_x_nx_1024.png")
     if show_fig: fig.show()
 
 # Process r2c_z, mesh 1024^3
@@ -588,7 +588,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("r2c_z_nx_1024.png")
+    if save_fig: fig.savefig("./images/r2c_z_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_r2cZ_gpu_x_nx_1024, prec="sp", ngpu = True):
@@ -612,7 +612,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_sp_r2c_z_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_sp_r2c_z_nx_1024.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_r2cZ_gpu_x_nx_1024, prec="dp", ngpu = True):
@@ -636,7 +636,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_dp_r2c_z_nx_1024.png")
+    if save_fig: fig.savefig("./images/best_dp_r2c_z_nx_1024.png")
     if show_fig: fig.show()
 
 # r2c_z, 1024^3, plot the impact of p_row and p_col when using 64 GPUs
@@ -666,7 +666,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("r2c_z_gpu_64_nx_1024.png")
+    if save_fig: fig.savefig("./images/r2c_z_gpu_64_nx_1024.png")
     if show_fig: fig.show()
 
 # Process c2c, mesh 2048^3
@@ -702,7 +702,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("c2c_nx_2048.png")
+    if save_fig: fig.savefig("./images/c2c_nx_2048.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_2048, prec="sp", ngpu = True):
@@ -726,7 +726,7 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_sp_c2c_nx_2048.png")
+    if save_fig: fig.savefig("./images/best_sp_c2c_nx_2048.png")
     if show_fig: fig.show()
     fig, ax = plt.subplots(1, layout="constrained")
     for run in timer_best(case_c2c_gpu_x_nx_2048, prec="dp", ngpu = True):
@@ -750,5 +750,5 @@ if True and (save_fig or show_fig):
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
     ax.legend(by_label.values(), by_label.keys(), loc='best')
-    if save_fig: fig.savefig("best_dp_c2c_nx_2048.png")
+    if save_fig: fig.savefig("./images/best_dp_c2c_nx_2048.png")
     if show_fig: fig.show()
