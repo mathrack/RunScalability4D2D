@@ -37,7 +37,9 @@ The python script `process.py` available in the present folder can process the d
 
 # Results of the test
 
-Tests on a single GPU for grids 128^3, 256^3 and 512^3 show a simple trend : the higher the number of cells, the longer it takes to run the test.
+## Tests on a single GPU
+
+For grids 128^3, 256^3 and 512^3 show a simple trend : the higher the number of cells, the longer it takes to run the test.
 
 ![Complex-to-complex FFT, forward + backward. One GPU. Various grids.](./images/c2c_gpu_1.png)
 
@@ -45,3 +47,11 @@ Tests on a single GPU for grids 128^3, 256^3 and 512^3 show a simple trend : the
 
 ![Real-to-complex FFT, physical in Z, forward + backward. One GPU. Various grids.](./images/r2c_z_gpu_1.png)
 
+## Impact of the pencil decomposition
+
+Tests on 64 GPUs with the grid 1024^3 illustrate the critical impact of the pencil decomposition on the performance.
+Pencil decomposition with 4 GPUs in a row or column can perform better because each node has 4 GPUs.
+However, this general observation is not always accurate.
+Each application using 2DECOMP&FFT should analyse carefully their workflow and adapt their pencil decomposition accordingly.
+
+![Real-to-complex FFT, physical in Z, forward + backward. 64 GPUs. Grid 1024^3. Various pencil decomposition.](./images/r2c_z_gpu_64_nx_1024.png)
