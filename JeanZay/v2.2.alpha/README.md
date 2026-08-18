@@ -10,6 +10,42 @@ The tests were performed in single precision and double precision using CUDA-awa
 Each test was performed one time to initialize the memory and then 100 times to measure the average performance.
 The partition H100 contains 364 nodes, each with 4 GPU NVIDIA H100 SXM5 80 Go.
 
+## Version of 2DECOMP&FFT used in the tests
+
+The version used for the tests is slightly ahead of 2.1 and is very close to 69c1c60a172507740d81ae9abbf3d4f9ed13dd9c. The following diff was present :
+
+```
+diff --git a/cmake/D2D_GPU.cmake b/cmake/D2D_GPU.cmake
+index e4b12d8..1c4b6d3 100644
+--- a/cmake/D2D_GPU.cmake
++++ b/cmake/D2D_GPU.cmake
+@@ -30,6 +30,7 @@ if (ENABLE_CUDA)
+     set(CMAKE_CUDA_ARCHITECTURES ${CUDA_ARCH_COMP} CACHE STRING "Set the correct CUDA architecture" FORCE)
+   else()
+     set(CUDA_ARCH_COMP ${SET_CUDA_ARCH})
++    set(CMAKE_CUDA_ARCHITECTURES ${CUDA_ARCH_COMP} CACHE STRING "Set the correct CUDA architecture" FORCE)
+   endif()
+ endif()
+ 
+diff --git a/cmake/D2D_MPI.cmake b/cmake/D2D_MPI.cmake
+index 549fed3..8aacecb 100644
+--- a/cmake/D2D_MPI.cmake
++++ b/cmake/D2D_MPI.cmake
+@@ -66,9 +66,9 @@ if (MPI_FOUND)
+        set(NP ${MPIEXEC_MAX_NUMPROCS})
+     endif()
+     # For even we'll test with a power of 2 number of MPI RANKS
+-    if (EVEN)
+-      closest_power_of_2(${NP} NP)
+-    endif()
++    #if (EVEN)
++    #  closest_power_of_2(${NP} NP)
++    #endif()
+     message(STATUS "NUMBER OF PROCS USED FOR TESTING ${NP}")
+     set(MPI_NUMPROCS ${NP} CACHE STRING "SAVE NRANKS FOR MPIRUN" FORCE)
+     set(MPI_NUMPROCS_SET 1 CACHE INTERNAL "MPI Ranks set" FORCE)
+```
+
 ## Building 2DECOMP&FFT:
 
 The build script below provides the version number for the compiler and the libraries.
@@ -49,9 +85,30 @@ For grids 128^3, 256^3 and 512^3 show a simple trend : the higher the number of 
 
 ![Complex-to-complex FFT, forward + backward. One GPU. Various grids.](./images/c2c_gpu_1.png)
 
+The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
+
+|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| ----------------- | :------------: | :------------: |
+| Double precision  | x 2.6          | x 4            |
+| Single precision  | x 2.2          | x 3.4          |
+
 ![Real-to-complex FFT, physical in X, forward + backward. One GPU. Various grids.](./images/r2c_x_gpu_1.png)
 
+The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
+
+|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| ----------------- | :------------: | :------------: |
+| Double precision  | x 2.3          | x 3.5          |
+| Single precision  | x 2.1          | x 2.8          |
+
 ![Real-to-complex FFT, physical in Z, forward + backward. One GPU. Various grids.](./images/r2c_z_gpu_1.png)
+
+The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
+
+|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| ----------------- | :------------: | :------------: |
+| Double precision  | x 2.5          | x 4            |
+| Single precision  | x 2.2          | x 3.2          |
 
 ## Impact of the pencil decomposition
 
