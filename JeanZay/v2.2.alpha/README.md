@@ -87,7 +87,7 @@ For grids 128^3, 256^3 and 512^3 show a simple trend : the higher the number of 
 
 The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
 
-|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| Size of the grid  | 128^3 => 256^3 | 256^3 => 512^3 |
 | ----------------- | :------------: | :------------: |
 | Double precision  | x 2.6          | x 4            |
 | Single precision  | x 2.2          | x 3.4          |
@@ -96,7 +96,7 @@ The table below provides the relative increase of the timer when the number of c
 
 The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
 
-|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| Size of the grid | 128^3 => 256^3 | 256^3 => 512^3 |
 | ----------------- | :------------: | :------------: |
 | Double precision  | x 2.3          | x 3.5          |
 | Single precision  | x 2.1          | x 2.8          |
@@ -105,7 +105,7 @@ The table below provides the relative increase of the timer when the number of c
 
 The table below provides the relative increase of the timer when the number of cells increases by a factor 8.
 
-|                   | 128^3 => 256^3 | 256^3 => 512^3 |
+| Size of the grid  | 128^3 => 256^3 | 256^3 => 512^3 |
 | ----------------- | :------------: | :------------: |
 | Double precision  | x 2.5          | x 4            |
 | Single precision  | x 2.2          | x 3.2          |
@@ -136,7 +136,7 @@ The strong scaling for a larger grid (1024^3) using 2 to 16 nodes is more intere
 
 The table below provides the relative decrease of the timer when the number of GPUs increases by a factor 2.
 
-|                  | 8 => 16 | 16 => 32 | 32 => 64 |
+| Numbze of GPUs   | 8 => 16 | 16 => 32 | 32 => 64 |
 | ---------------- | :-----: | :------: | :------: |
 | Double precision | / 1.16  | / 1.31   | / 1.36   |
 | Single precision | / 1.21  | / 1.23   | / 1.22   |
