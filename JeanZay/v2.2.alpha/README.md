@@ -15,15 +15,21 @@ The partition H100 contains 364 nodes, each with 4 GPU NVIDIA H100 SXM5 80 Go.
 The build script below provides the version number for the compiler and the libraries.
 ```
 #!/usr/bin/env bash
+module purge
 module load arch/h100
+module load git/2.53.0
+module load cmake/3.31.4
 module load nvidia-compilers/26.3
 module load cuda/12.8.0
 module load openmpi/4.1.8-cuda
-module load cmake/3.31.4
-rm -rf ./build_caliper_static/
-FC=mpif90 CC=mpicc cmake -S . -B build_caliper_static -DBUILD_SHARED_LIBS=off -DCMAKE_BUILD_TYPE=dev -DBUILD_TESTING=ON -DBUILD_TARGET=gpu -DENABLE_NCCL=no -DSET_CUDA_ARCH=90 -DCOMPLEX_TESTS=OFF -DDOUBLE_PRECISION=ON -DENABLE_INPLACE=ON -DENABLE_PROFILER=caliper -Dcaliper_DIR=xxxxxxxxx
-FC=mpif90 CC=mpicc cmake --build build_caliper_static --verbose
-FC=mpif90 CC=mpicc cmake --install build_caliper_static
+
+rm -rf include/ lib64/ tmp/
+mkdir tmp
+cd tmp
+
+FC=mpif90 CC=mpicc CXX=mpicxx cmake -S ../.. -B build_dp_mpi_h100 -DCMAKE_INSTALL_PREFIX=xxxxxxx -DBUILD_SHARED_LIBS=off -DCMAKE_BUILD_TYPE=release -DBUILD_TESTING=ON -DBUILD_TARGET=gpu -DENABLE_NCCL=no -DSET_CUDA_ARCH=90 -DEVEN=ON -DCOMPLEX_TESTS=OFF -DDOUBLE_PRECISION=OFF -DENABLE_INPLACE=ON -DENABLE_PROFILER=caliper -Dcaliper_DIR=xxxxxxxxxxx
+FC=mpif90 CC=mpicc CXX=mpicxx cmake --build build_dp_mpi_h100 --verbose
+FC=mpif90 CC=mpicc CXX=mpicxx cmake --install build_dp_mpi_h100
 ```
 
 ## Running the tests
