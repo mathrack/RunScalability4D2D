@@ -133,3 +133,10 @@ The NCCL backend might improve the performance.
 The strong scaling for a larger grid (1024^3) using 2 to 16 nodes is more interesting.
 
 ![Real-to-complex FFT, physical in Z, forward + backward. Grid 1024^3. Various number of GPUs.](./images/best_dp_r2c_z_nx_1024.png)
+
+The table below provides the relative decrease of the timer when the number of GPUs increases by a factor 2.
+
+|                  | 8 => 16 | 16 => 32 | 32 => 64 |
+| ---------------- | :-----: | :------: | :------: |
+| Double precision | / 1.16  | / 1.31   | / 1.36   |
+| Single precision | / 1.21  | / 1.23   | / 1.22   |
