@@ -1,0 +1,10 @@
+ ===== c2c interface =====
+ First iteration with dedicated timer
+      time (sec):    0.2422805102500000        0.2399860875000000     
+ 
+ error / mesh point:    4.5741918804844008E-015
+ Avg time (sec):    0.2435827296675000        0.2379798028574999     
+ GFLOPS :     668.9111495261044     
+    
+ fft_c2c_x completed 
+    

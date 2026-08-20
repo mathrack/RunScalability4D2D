@@ -1,0 +1,14 @@
+ In auto-tuning mode......
+ factors:             1
+ p_row x p_col            1            1
+ WARNING: current 2D DECOMP set-up might not work
+ Padded ALLTOALL optimisation on
+ ===== r2c/c2r interface =====
+ First iteration with dedicated timer
+      time (sec):    1.4262080000000000E-003   4.0346189999999997E-003
+ 
+ error / mesh point:    1.7653038E-06
+ Avg time (sec):    9.8019318999999932E-004   4.1602408500000018E-003
+    
+ fft_r2c_x completed 
+    

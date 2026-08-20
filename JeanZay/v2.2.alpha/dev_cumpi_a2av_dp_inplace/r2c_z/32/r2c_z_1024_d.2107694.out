@@ -1,0 +1,10 @@
+ ===== r2c/c2r interface =====
+ First iteration with dedicated timer
+      time (sec):    0.1124667677812500        7.0571411093750008E-002
+ 
+ error / mesh point:    2.5736983495468723E-015
+ Avg time (sec):    9.0621396055000025E-002   7.5330560385312495E-002
+    
+ fft_r2c_z completed 
+    
+Submitted batch job 2107783

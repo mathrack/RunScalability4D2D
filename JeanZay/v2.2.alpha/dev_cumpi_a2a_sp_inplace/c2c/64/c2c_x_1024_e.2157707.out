@@ -1,0 +1,12 @@
+ Padded ALLTOALL optimisation on
+ ===== c2c interface =====
+ First iteration with dedicated timer
+      time (sec):    7.5579011078125008E-002   5.3516843421875002E-002
+ 
+ error / mesh point:    4.2877837E-06
+ Avg time (sec):    4.9537123817968751E-002   4.9792640173437500E-002
+ GFLOPS :     3242.960964126209     
+    
+ fft_c2c_x completed 
+    
+Submitted batch job 2157708
